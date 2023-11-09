@@ -32,5 +32,5 @@ int main(){
         cout <<"key is absent" <<endl;
     }
 
-
+    return 0;
 }
