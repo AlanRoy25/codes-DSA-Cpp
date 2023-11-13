@@ -22,27 +22,33 @@ void sortOne (int arr[], int n){
         cout << "Step" << step++ <<endl;
         printArray(arr, n);
         cout << endl;
-    
 
-    while (arr[left] == 0)
+    while (arr[left] == 0 && left<right)
     {
         left++;
     }
 
-    while (arr[right] == 0)
+    while (arr[right] == 1 && left<right)
     {
         right--;
     }
 
-    swap(arr[left], arr[right]);
-    left++;
-    right--;
-    
+    if (left<right){
+        swap(arr[left], arr[right]);
+        left++;
+        right--;
+
+    }
+
+    }
+
 }
 
-in main(){
+int main(){
     
-    arr[8] = {1, 1, 0, 1, 0, 0, 1, 0 }
+    int arr[8] = {1, 1, 0, 1, 0, 0, 1, 0 };
+
+    cout<< arr[8] <<endl;
 
     sortOne(arr, 8);
     printArray(arr, 8);
