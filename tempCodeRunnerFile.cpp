@@ -2,51 +2,75 @@
 using namespace std;
 
 
+int firstocc(int arr[], int n , int key){
 
-void printArray(int arr[], int n){
-    for (int i=0; i<n; i++){
-        cout << arr[i] << " ";
+    int s=0;
+    int e = n-1;
+    int ans =0;
+    int mid = s + (e-s)/2;
+
+    while(s<=e){
+
+        if (key == arr[mid]){
+            
+            ans=mid;
+            e = mid-1;
+        
+        else if ( key > arr[mid]){
+            s= mid+1;
+        }
+        else if (key < arr[mid]){
+            e= mid-1;
+        }
+
+        mid = s +(e-s)/2;
+
     }
+    return ans;
+}
+}
+int lastocc(int arr[], int n , int key){
 
-    cout << endl;
+    int s=0;
+    int e = n-1;
+    int ans =0;
+    int mid = s + (e-s)/2;
+
+    while(s<=e){
+
+        if (key == arr[mid]){
+            
+            ans=mid;
+            s = mid +1;
+        else if ( key > arr[mid]){
+            s= mid+1;
+        }
+        else if (key < arr[mid]){
+            e= mid-1;
+        }
+
+        mid = s +(e-s)/2;
+
+    }
+    return ans;
+}
 
 }
 
-void sortOne (int arr[], int n){
+int main (){
 
-    int left =0;
-    int right = n-1;
-    int step =0;
+    int evenarr[8] = {0, 0, 1, 1, 2, 2, 2, 2 };
     
-    while(left < right){
-        cout << "Step" << step++ <<endl;
-        printArray(arr, n);
-        cout << endl;
-    
+    int firstindex = firstocc(evenarr, 6, 2);
+    int lastindex = lastocc(evenarr, 6, 2);
 
-    while (arr[left] == 0)
-    {
-        left++;
-    }
+    cout << "The Index of first number is: "  << firstocc(evenarr, 8, 2) << endl;
+    cout << "The Index of last number is: "  << lastocc(evenarr, 8, 2) << endl;
 
-    while (arr[right] == 0)
-    {
-        right--;
-    }
 
-    swap(arr[left], arr[right]);
-    left++;
-    right--;
-    
-}
+    int totalnoOccurence = (lastindex - firstindex) + 1;
 
-in main(){
-    
-    arr[8] = {1, 1, 0, 1, 0, 0, 1, 0 }
-
-    sortOne(arr, 8);
-    printArray(arr, 8);
+    cout << "The no of occurences of an number is: "  << totalnoOccurence << endl;
 
     return 0;
-
 }
