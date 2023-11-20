@@ -3,7 +3,7 @@ using namespace std;
 
 void Reversearray(int arr[], int n){
  
-    int start =;
+    int start =0;
     int end = n-1;
 
     while(start<=end){

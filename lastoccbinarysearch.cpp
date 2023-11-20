@@ -10,11 +10,11 @@ int firstocc(int arr[], int n, int key) {
     while (s <= e) {
         if (key == arr[mid]) {
             ans = mid;
-            e = mid - 1;
+            e = mid - 1; //qki apne ko   first occ find karna tha 
         } else if (key > arr[mid]) {
-            s = mid + 1;
+            s = mid + 1; //right side jaane hain 
         } else if (key < arr[mid]) {
-            e = mid - 1;
+            e = mid - 1; //left side jaane hain
         }
 
         mid = s + (e - s) / 2;
@@ -44,7 +44,7 @@ int lastocc(int arr[], int n, int key) {
 }
 
 int main() {
-    int evenarr[8] = {0, 0, 1, 1, 2, 2, 2, 2};
+    int evenarr[8] = {0, 0, 1, 1, 1, 2, 2, 2};
 
     int firstindex = firstocc(evenarr, 8, 2);
     int lastindex = lastocc(evenarr, 8, 2);
