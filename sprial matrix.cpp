@@ -4,6 +4,7 @@ class Solution {
 public:
     std::vector<int> spiralOrder(std::vector<std::vector<int>>& matrix) {
         std::vector<int> ans;
+        
         int row = matrix.size();
         int col = matrix[0].size();
         int count = 0;
