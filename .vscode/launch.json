@@ -1,25 +1,27 @@
 {
-    "version": "0.2",
+    "version": "0.2.0",
     "configurations": [
-        {
-            "name": "C++ Debug",
-            "type": "cppdbg",
-            "request": "launch",
-            "program": "${workspaceFolder}/myprogram",
-            "args": [],
-            "stopAtEntry": false,
-            "cwd": "${workspaceFolder}",
-            "environment": [],
-            "externalConsole": false,
-            "MIMode": "gdb",
-            "setupCommands": [
-                {
-                    "description": "Enable pretty-printing for gdb",
-                    "text": "-enable-pretty-printing",
-                    "ignoreFailures": true
-                }
-            ],
-            "preLaunchTask": "C/C++: g++ build active file"
-        }
+      {
+        "name": "Debug CPP",
+        "type": "cppdbg",
+        "request": "launch",
+        "program": "${workspaceFolder}/PRACTISE CODES C++/your_executable_name", // Update this with your actual executable name
+        "args": [],
+        "stopAtEntry": false,
+        "cwd": "${workspaceFolder}",
+        "environment": [],
+        "externalConsole": false,
+        "MIMode": "gdb",
+        "setupCommands": [
+          {
+            "description": "Enable pretty-printing for gdb",
+            "text": "-enable-pretty-printing",
+            "ignoreFailures": true
+          }
+        ],
+        "preLaunchTask": "build C++ file", // This should match the label of the build task in tasks.json
+        "miDebuggerPath": "/path/to/your/gdb" // Update this with the path to your GDB executable
+      }
     ]
-}
+  }
+  
